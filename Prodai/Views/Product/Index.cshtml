@@ -1,0 +1,64 @@
+﻿@model ProductLibrary.Product
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/Styling/StyleArticle.css" asp-append-version="true" rel="stylesheet" />
+<h1 class="article">Добави обява - Продавам </h1>
+
+<form class="form" action="Product/Article" enctype="multipart/form-data" method="post">
+    <input type="text" class="text" name="name" id="name" required maxlength="100" placeholder="Име на продукт *" />
+    <br />
+    <br />
+    <br />
+    <textarea class="text textArea" name="description" required maxlength="500" placeholder="Описание *"></textarea>
+    <br />
+    <br />
+    <br />
+    <input type="text" class="text" name="price" maxlength="20" placeholder="Цена" />
+    <br />
+    <br />
+    <br />
+    <h3 class="article">Изображение * - Максимална дължина на файла-2mb </h3>
+    <input type="file" class="text" name="productIcon" required accept="image/*" />
+    <br />
+    <br />
+    <br />
+    <p class="article">Изображение 2 - Максимална дължина на файла-2mb</p>
+    <input type="file" class="text" name="picture1" accept="image/*" />
+    <br />
+    <br />
+    <br />
+    <p class="article">Изображение 3 - Максимална дължина на файла-2mb</p>
+    <input type="file" class="text" name="picture2" accept="image/*" />
+    <br />
+    <br />
+    <br />
+    <p class="article">Изображение 4 - Максимална дължина на файла-2mb</p>
+    <input type="file" name="picture3" class="text" accept="image/*" />
+    <br />
+    <br />
+    <br />
+    <textarea name="contact" class="text textArea" required maxlength="500" placeholder="Адрес,телефон за връзка и/или електронна поща *"></textarea>
+    <br />
+    <br />
+    <br />
+    <select required class="text" asp-for="Category" asp-items="@Html.GetEnumSelectList(typeof(ProductLibrary.ProductsEnum))">
+        <option disabled>Изберете категория на продукта *</option>
+    </select>
+    <br />
+    <br />
+    <br />
+    <select required class="text" asp-for="City" asp-items="@Html.GetEnumSelectList(typeof(ProductLibrary.Cities))">
+        <option disabled>Изберете град *</option>
+    </select>
+    <br />
+    <br />
+    <br />
+    <h2 class="article">Полетата съдържащи '*' са задължителни </h2>
+    <input class="addBtn" type="submit" value="Добави" />
+    <br />
+    <br />
+</form>
+
+
+

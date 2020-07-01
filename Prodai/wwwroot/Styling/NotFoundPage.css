@@ -1,0 +1,12 @@
+﻿body {
+}
+.text{
+    color:blue;
+}
+.goBack{
+    font-size:30px;
+    color:brown;
+}
+.container{
+    box-shadow:5px black;
+}

@@ -1,0 +1,52 @@
+﻿@model ProductLibrary.Product
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="~/Styling/HomeIndexStyle.css" runat="server" asp-append-version="true" rel="stylesheet" />
+<div class="formContainer">
+    <form action="Product/ShowCategories" method="get">
+        <select class="text" id="selectHomeIndex" asp-for="Category" asp-items="@Html.GetEnumSelectList(typeof(ProductLibrary.ProductsEnum))">
+            <option disabled>Изберете категория</option>
+        </select>
+        <br />
+        <br />
+        <select class="text" id="selectHomeIndex" asp-for="City" asp-items="@Html.GetEnumSelectList(typeof(ProductLibrary.Cities))">
+            <option disabled>Изберете град</option>
+        </select>
+        <br />
+        <br />
+        <input id="keySearch" class="text" type="text" name="keySearch" placeholder="Ключови думи" />
+        <br />
+        <br />
+        <input class="addBtn" type="submit" value="Търси" />
+        <br />
+
+    </form>
+</div>
+@if (ViewBag.ProductsImages != null)
+{
+    @foreach (var item in ViewBag.ProductsImages)
+    {
+
+        {
+            <ul>
+                <li class="listImages">
+                    <div class="name">
+                        <h3>@item.Name</h3>
+                    </div>
+                    @if (item.ProductIconName != null)
+                    {
+                        <img class="img" src="~/Pictures/@item.ProductIconName" />
+                    }
+                    <br />
+                    <a  class="lookarticle" asp-controller="Product" asp-action="Details" asp-route-id="@item.Id">Виж обявата</a>
+                    
+                </li>
+        </ul>
+        }
+    }
+}
+
+
+
+

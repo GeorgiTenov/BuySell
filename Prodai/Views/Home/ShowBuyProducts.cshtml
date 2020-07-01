@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProductLibrary.Product>
+
+@{
+    ViewData["Title"] = "ShowBuyProducts";
+}
+
+<h1 class="title">Купувам</h1>
+<link href="~/Styling/ShowSellProducts.css" asp-append-version="true" rel="stylesheet" />
+
+
+@foreach (var item in Model)
+{
+
+   
+        <ul class="listImages">
+            <li>
+                <div class="name">
+                    <h3>@item.Name</h3>
+                </div>
+                @if (item.ProductIconName != null)
+                {
+                    <img class="img" src="~/Pictures/@item.ProductIconName" />
+                }
+                </li>
+      
+            <li>
+                <h3 class="texts">Обява:</h3> <p class="displayfor">@Html.DisplayFor(modelItem => item.ArticleName)</p>
+            </li>
+
+            <li>
+                <h3 class="texts">Дата на обявата:</h3> <p class="displayfor">@Html.DisplayFor(modelItem => item.Date)</p>
+            </li>
+            <li>
+                <h3 class="texts">Име на обявата:</h3>  <p class="displayfor">@Html.DisplayFor(modelItem => item.Name)</p>
+            </li>
+            <li>
+                <h3 class="texts">Цена:</h3>  <p class="displayfor">@Html.DisplayFor(modelItem => item.Price)</p>
+            </li>
+            <li>
+                <a asp-controller="Product" class="lookarticle" asp-action="Details" asp-route-id="@item.Id">Виж обявата</a>
+            </li>
+        </ul>
+    }
+

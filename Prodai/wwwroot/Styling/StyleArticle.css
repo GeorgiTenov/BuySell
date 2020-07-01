@@ -1,0 +1,32 @@
+﻿body {
+}
+.form {
+    background-color: grey;
+    border-radius: 10px;
+}
+.text {
+    width:100%;
+    border-bottom-left-radius: 20px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+  
+}
+.textArea{
+    height:200px;
+    resize:none;
+}
+.addBtn {
+    width: 300px;
+    background-color: antiquewhite;
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius:20px;
+}
+@media only screen and (max-width:450px){
+    .article{
+        font-size:18px;
+    }
+    .addBtn{
+        left:5px;
+    }
+}

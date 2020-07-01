@@ -1,0 +1,51 @@
+﻿body {
+}
+.img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    position:relative;
+   
+}
+.infoUl {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    background-color:grey;
+    border-radius:10px;
+}
+.listImages{
+    list-style-type: none;
+    margin: 25px;
+    padding: 25px;
+    align-content:center;
+    align-items:center;
+}
+.infoUl li{
+    font-size:30px;
+    margin:10px;
+    padding:10px;
+}
+.listImages li{
+    margin:20px;
+    padding:20px;
+}
+.texts{
+    font-size:30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:brown;
+}
+@media only screen and (max-width:450px){
+    img{
+        width:100%;
+        left:-60px;
+    }
+    .texts{
+        font-size:16px;
+    }
+    .infoUl li{
+        font-size:14px;
+
+    }
+
+}

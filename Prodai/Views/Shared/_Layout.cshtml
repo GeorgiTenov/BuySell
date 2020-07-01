@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Продай-купи</title>
+    <link rel="shortcut icon" type="image/x-icon"  href="~/BackgorundImages/received_721138782033814.jpeg"/>
+    <link href="~/Styling/HomeIndexStyle.css" runat="server" asp-append-version="true" rel="stylesheet" />
+</head>
+<body>
+    <header>
+            <div class="container">
+               
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" id="home" asp-area="" asp-controller="Home" asp-action="Index">Продай-купи</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Продай</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ArticleBuy">Купи</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ShowSellProducts">Покажи всички обяви - продавам</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ShowBuyProducts">Покажи всички обяви - купувам</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">За нас</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+   
+</body>
+</html>
